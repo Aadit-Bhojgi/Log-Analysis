@@ -3,7 +3,7 @@
 ### Requirements
 
 This project includes a [Vagrant](https://www.vagrantup.com/) virtual environment and [VirtualBox](https://www.virtualbox.org/). To use it, install VirtualBox and (Vagrant).<a href="https://www.vagrantup.com/downloads.html">This </a>is the link you need to go to.
-To Import modules you have to Environmental Variable. <a href="http://hanzratech.in/2015/01/16/setting-up-flask-in-ubuntu-14-04-in-virtual-environment.html">Here </a>is the Link to make one.
+To Import modules you have to make Environmental Variable environment. <a href="http://hanzratech.in/2015/01/16/setting-up-flask-in-ubuntu-14-04-in-virtual-environment.html">Here </a>is the Link to make one.
 
 ### Steps
 
