@@ -27,6 +27,8 @@ Now, 2nd Choice
 If you want to just run Project_Tool_DB.py file then make the changes mentioned 
 in the comments of the file and run:
 ```
+$ python Project_Tool_DB.py
+```
 
 ### Create Views
 
@@ -40,7 +42,6 @@ FROM articles LEFT JOIN log
 ON log.path LIKE '%' || articles.slug || '%'
 GROUP BY articles.title
 ORDER BY views DESC;
-
 ```
 
 query_2
@@ -50,11 +51,18 @@ $ CREATE VIEW query_2 AS SELECT authors.name, COUNT(*)
 AS vi FROM articles 
 JOIN authors on articles.author = authors.id JOIN log 
 ON log.path LIKE concat('%', articles.slug, '%') where 
-log.status LIKE '%200%' GROUP BY authors.name ORDER BY vi DESC")
+log.status LIKE '202 OK' GROUP BY authors.name ORDER BY vi DESC;
 ```
 
 query_3
 
 ```
-$
+$ CREATE VIEW query_3 AS SELECT day, perc from 
+("SELECT day, round((sum(requests)/(select count(*) FROM log WHERE
+substring(cast(log.time as text), 0, 11) = day) * 100), 2) as
+perc from (select substring(cast(log.time as text), 0, 11) as day, 
+count(*) as requests from log where status like '404 NOT FOUND' group by day)
+as log_percentage group by day order by perc desc) as final_query "
+where perc >= 1");
+```
 
