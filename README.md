@@ -2,7 +2,7 @@
 
 ### Requirements
 
-This project includes a [Vagrant](https://www.vagrantup.com/) virtual environment and [VirtualBox](https://www.virtualbox.org/). To use it, install VirtualBox and (Vagrant).<a href="https://www.vagrantup.com/">This </a>is the link you need to go to.
+This project includes a [Vagrant](https://www.vagrantup.com/) virtual environment and [VirtualBox](https://www.virtualbox.org/). To use it, install VirtualBox and (Vagrant).<a href="https://www.vagrantup.com/downloads.html">This </a>is the link you need to go to.
 To Import modules you have to Environmental Variable. <a href="http://hanzratech.in/2015/01/16/setting-up-flask-in-ubuntu-14-04-in-virtual-environment.html">Here </a>is the Link to make one.
 
 ### Steps
@@ -32,7 +32,7 @@ $ python Project_Tool_DB.py
 
 ### Create Views
 
-article_view
+#### article_view
 
 ```
 $ CREATE VIEW article_views AS
@@ -44,7 +44,7 @@ GROUP BY articles.title
 ORDER BY views DESC;
 ```
 
-query_2
+#### query_2
 
 ```
 $ CREATE VIEW query_2 AS SELECT authors.name, COUNT(*) 
@@ -54,7 +54,7 @@ ON log.path LIKE concat('%', articles.slug, '%') where
 log.status LIKE '202 OK' GROUP BY authors.name ORDER BY vi DESC;
 ```
 
-query_3
+#### query_3
 
 ```
 $ CREATE VIEW query_3 AS SELECT day, perc from 
