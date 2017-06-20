@@ -15,7 +15,7 @@ $ vagrant up
 $ vagrant ssh
 $ cd /vagrant
 ```
-1st Choice:
+#### 1st Choice:
 To make a server and then accessing it, run:
 ```
 python Project_Tool.py
@@ -23,8 +23,8 @@ python Project_Tool.py
 ```
 Then, go to you browser and type `https://http://localhost:8000/`
 
-Now, 2nd Choice
-If you want to just run Project_Tool_DB.py file then make the changes mentioned 
+#### 2nd Choice:
+Now, If you want to just run Project_Tool_DB.py file then make the changes mentioned 
 in the comments of the file and run:
 ```
 $ python Project_Tool_DB.py
