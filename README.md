@@ -21,7 +21,7 @@ To make a server and then accessing it, run `Project_Tool.py` file:
 $ python Project_Tool.py
 * Running on http://0.0.0.0:8000/ (Press CTRL+C to quit)
 ```
-Then, go to you browser and type `https://http://localhost:8000/`
+Then, go to you browser and type `https://localhost:8000/`
 
 #### 2nd Choice:
 Now, If you want to just run `Project_Tool_DB.py` file then make the changes mentioned 
