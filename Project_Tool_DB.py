@@ -25,8 +25,8 @@ def query_1():
     data = ''
     for (title, count) in query_result:
         data = data + "Article: '{}', Views: {}".format(title, count)+'\n'
-    # return data
-    print data
+    return data
+    # print data
 
 
 def query_2():
@@ -40,8 +40,8 @@ def query_2():
     data = ''
     for (title, count) in query_result:
         data = data + "Author: '{}', Views: {}".format(title, count)+'\n'
-    # return data
-    print data
+    return data
+    # print data
 
 
 def query_3():
@@ -53,13 +53,13 @@ def query_3():
     query_result = c.fetchall()
     db.close()
     data = "Date: {}, Percentage: {}%".format(query_result[0][0], query_result[0][1])
-    # return data
-    print data
+    return data
+    # print data
 
 
-print "Q1. What are the most popular three articles of all time?\n"
+'''print "Q1. What are the most popular three articles of all time?\n"
 query_1()
 print "Q2. Who are the most popular article authors of all time?\n"
 query_2()
 print "Q3. On which days did more than 1 percent of requests lead to errors?\n"
-query_3()
+query_3()'''
