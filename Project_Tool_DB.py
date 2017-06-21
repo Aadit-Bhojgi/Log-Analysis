@@ -24,7 +24,7 @@ def query_1():
     db.close()
     data = ''
     for (title, count) in query_result:
-        data = data + "Article: '{}', Views: {}".format(title, count)+'\n'
+        data = data + "Article: '{}', Views: {}<br>".format(title, count)
     return data
     # print data
 
@@ -39,7 +39,7 @@ def query_2():
     db.close()
     data = ''
     for (title, count) in query_result:
-        data = data + "Author: '{}', Views: {}".format(title, count)+'\n'
+        data = data + "Author: '{}', Views: {}<br>".format(title, count)
     return data
     # print data
 
