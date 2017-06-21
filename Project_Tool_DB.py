@@ -24,9 +24,9 @@ def query_1():
     db.close()
     data = ''
     for (title, count) in query_result:
-        data = data + "Article: '{}', Views: {}<br>".format(title, count)
-    return data
-    # print data
+        data = data + "Article: '{}', Views: {}".format(title, count)+'\n'
+    # return data
+    print data
 
 
 def query_2():
@@ -34,14 +34,14 @@ def query_2():
     db = psycopg2.connect(database=Db_name)
     c = db.cursor()
     # query_2 here is a VIEW (Query for this is in README.md)
-    c.execute("""SELECT * FROM query_2""")
+    c.execute("""SELECT * FROM author_view""")
     query_result = c.fetchall()
     db.close()
     data = ''
     for (title, count) in query_result:
-        data = data + "Author: '{}', Views: {}<br>".format(title, count)
-    return data
-    # print data
+        data = data + "Author: '{}', Views: {}".format(title, count)+'\n'
+    # return data
+    print data
 
 
 def query_3():
@@ -49,17 +49,17 @@ def query_3():
     db = psycopg2.connect(database=Db_name)
     c = db.cursor()
     # query_3 here is a VIEW (Query for this is in README.md)
-    c.execute("""SELECT * FROM query_3""")
+    c.execute("""SELECT * FROM date_view""")
     query_result = c.fetchall()
     db.close()
     data = "Date: {}, Percentage: {}%".format(query_result[0][0], query_result[0][1])
-    return data
-    # print data
+    # return data
+    print data
 
 
-"""print "Q1. What are the most popular three articles of all time?\n"
+print "Q1. What are the most popular three articles of all time?\n"
 query_1()
 print "Q2. Who are the most popular article authors of all time?\n"
 query_2()
 print "Q3. On which days did more than 1 percent of requests lead to errors?\n"
-query_3()"""
+query_3()
