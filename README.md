@@ -35,7 +35,7 @@ $ python Project_Tool_DB.py
 #### article_view
 
 ```
-$ CREATE VIEW article_views AS
+$ CREATE VIEW article_view AS
 SELECT articles.title, 
 COUNT(CASE WHEN log.status LIKE '%200 OK%' THEN 1 END) AS views
 FROM articles LEFT JOIN log
@@ -44,25 +44,25 @@ GROUP BY articles.title
 ORDER BY views DESC;
 ```
 
-#### query_2
+#### author_view
 
 ```
-$ CREATE VIEW query_2 AS SELECT authors.name, COUNT(*) 
-AS vi FROM articles 
-JOIN authors on articles.author = authors.id JOIN log 
-ON log.path LIKE concat('%', articles.slug, '%') where 
-log.status LIKE '202 OK' GROUP BY authors.name ORDER BY vi DESC;
+$ CREATE VIEW author_view AS SELECT authors.name, COUNT(*) as vi 
+from articles JOIN authors ON articles.author = authors.id 
+JOIN log ON log.path LIKE ('%' || articles.slug || '%') 
+WHERE log.status LIKE '200 OK' GROUP BY authors.name 
+ORDER BY vi DESC;
 ```
 
-#### query_3
+#### date_view
 
 ```
-$ CREATE VIEW query_3 AS SELECT day, perc from 
-("SELECT day, round((sum(requests)/(select count(*) FROM log WHERE
+$ CREATE VIEW date_view AS SELECT day, perc from 
+(SELECT day, round((sum(requests)/(select count(*) FROM log WHERE
 substring(cast(log.time as text), 0, 11) = day) * 100), 2) as
 perc from (select substring(cast(log.time as text), 0, 11) as day, 
 count(*) as requests from log where status like '404 NOT FOUND' group by day)
-as log_percentage group by day order by perc desc) as final_query "
-where perc >= 1");
+as log_percentage group by day order by perc desc) as final_query
+where perc >= 1;
 ```
 
