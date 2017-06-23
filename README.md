@@ -27,7 +27,7 @@ Then, go to you browser and type `https://localhost:8000/`
 Now, If you want to just run `Project_Tool_DB.py` file then make the changes mentioned 
 in the comments of the file and run:
 ```
-$ python Project_Tool_DB.py
+$ python Project_Tool_DB.py > Result.txt
 ```
 
 ### Create Views
